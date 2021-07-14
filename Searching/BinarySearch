@@ -26,9 +26,6 @@ int main()
    {
        cout<<"Element is not found";
    }
-
- 
-
 }
 
 int binarySearch(int arr[], int l,int r, int x) 
