@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+using namespace std ;
+
+void buble(int arr[] , int n);
+
+void swap(int arr[] , int i , int j);
+
+int main()
+{
+
+  int n ;
+  cout<<"Enter the size of the array : ";
+  cin>>n;
+  int arr[n];
+  for(int i=0 ;i < n ; i++)
+  {
+    cout<<"Enter the number : ";
+    cin>>arr[i];
+  }
+  cout<<"Array brfore sorting : "<<endl;
+  for(int i=0 ;i < n ; i++)
+  {
+      
+   cout<<arr[i]<<"  ";
+  }
+  cout<<endl;
+  buble(arr , n);
+
+  cout<<"Array After sorting : "<<endl;
+  for(int i=0 ;i < n ; i++)
+  {
+    cout<<arr[i]<<"  ";
+  }
+}
+
+void buble(int arr[] , int n)
+{
+    for(int i=0 ; i<n-1 ;i++ )
+    {
+      bool swaped = false;
+        for(int j=0 ; j<n-1-i ;j++)
+        {
+            if(arr[j] > arr[j+1])
+            {
+              swaped = true ;
+                swap(arr , j , j+1);
+            }
+        }
+        if(swaped)
+        {
+          break;
+        }
+
+    }
+
+}
+
+void swap(int arr[] , int i , int j)
+{
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
