@@ -1,1 +1,80 @@
+#include <bits/stdc++.h>
+using namespace std ;
+void push (int stack[ ] , int x , int n);
+void pop (int stack[ ] ,int n ) ;
 
+bool isEmpty ( );
+int topElement (int stack[] );
+int size ();
+
+int top = -1 ;//globally defining the value of top ,as the stack is e
+
+
+void push (int stack[ ] , int x , int n) {
+    if ( top == n-1 ) {         //if top position is the last of position of stack, means stack is full .
+        cout << "Stack is full.Overflow condition! ";
+    }
+    else{
+        top = top +1 ;            //incrementing top position 
+        stack[ top ] = x ;       //inserting element on incremented position .  
+}
+}
+void pop () 
+{
+
+    if( isEmpty ( ) )
+    {
+        cout <<  "Stack is empty . Underflow condition! " << endl ;
+    }
+    else    
+    {
+         top = top - 1 ; //decrementing top’s position will detach last element from stack .            
+    }
+}
+bool isEmpty ( )
+{
+    if ( top == -1 )  //stack is empty .
+    return true ; 
+    else
+    return false;
+}
+int topElement (int stack[] )
+{
+    int c = stack[ top ];
+    return c;
+}
+int size ( )
+{
+    return top + 1;
+}
+
+
+int main()
+{
+    int stack[ 3 ];
+    // pushing element 5 in the stack .
+    push(stack , 5 , 3 ) ;
+
+    cout <<   " Current size of stack is"  << size ( ) << endl ;
+
+    push(stack , 10 , 3);
+    push (stack , 24 , 3) ;
+
+    cout <<  "Current size of stack is " << size( ) << endl ;
+
+    //As now the stack is full ,further pushing  will show overflow condition .
+    push(stack , 12 , 3) ;
+
+    //Accessing the top element .
+    cout <<  " The current top element in stack is "<< topElement(stack ) << endl;
+ 
+     cout<<endl;//now removing all the elements from stack .
+    for(int i = 0 ; i < 3;i++ )
+        {cout<<stack[i];}
+        cout<<endl;
+    cout << "Current size of stack is " << size( ) << endl ;
+
+    //as stack is empty , now further popping will show underflow condition .
+    pop ( );
+
+}
