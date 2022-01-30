@@ -4,7 +4,7 @@ using namespace std ;
 
 void Quicksort(int arr[] , int l , int h);
 
-int partation(int arr[] , int l , int h);
+int partition(int arr[] , int l , int h);
 
 void swap(int arr[] , int i , int j );
 
@@ -45,7 +45,7 @@ int main()
 void Quicksort(int arr[] , int l , int h)
 {
   if(l<h){
-    int pivot = partation(arr , l , h );
+    int pivot = partition(arr , l , h );
     Quicksort(arr , l , pivot-1);
     Quicksort(arr,pivot+1,h);
   }
@@ -54,7 +54,7 @@ void Quicksort(int arr[] , int l , int h)
 }
 
 
-int partation(int arr[] , int l , int h)
+int partition(int arr[] , int l , int h)
 {
 
   int pi = arr[l];
